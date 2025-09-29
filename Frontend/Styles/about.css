@@ -1,0 +1,450 @@
+/* About Page Styles */
+
+/* About Section */
+.about-section {
+    padding: 8rem 1.5rem 4rem;
+    min-height: 100vh;
+    position: relative;
+    z-index: 5;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease-out;
+}
+
+.about-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    color: var(--text-primary);
+    text-shadow: 0 0 5px var(--accent-color);
+    position: relative;
+}
+
+.about-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 3px;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+    .about-content {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image .logo-circle {
+    width: 32rem;
+    height: 32rem;
+    padding: 1rem;
+    animation: pulse 3s ease-in-out infinite alternate;
+}
+
+.about-image img, .about-image video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.about-text {
+    flex: 2;
+    color: var(--text-primary);
+}
+
+.about-subtitle {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.about-list {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.about-list li {
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    color: var(--text-secondary);
+}
+
+.list-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.75rem;
+    color: var(--accent-color);
+    font-size: 1.25rem;
+}
+
+/* Team Section */
+.team-section {
+    margin-bottom: 3rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+    justify-content: center;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team-member {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+[data-theme="light"] .team-member {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-color: var(--accent-color);
+}
+
+.member-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-secondary);
+    color: var(--accent-color);
+    font-size: 2.5rem;
+    border: 2px solid var(--accent-color);
+}
+
+.member-name {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.member-role {
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.member-bio {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Call to Action Section */
+.cta-section {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    animation: fadeInUp 1s ease-out;
+}
+
+[data-theme="light"] .cta-section {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.cta-section p {
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .about-title {
+        font-size: 2rem;
+    }
+    
+    .about-subtitle {
+        font-size: 1.25rem;
+    }
+    
+    .about-image .logo-circle {
+        width: 18rem;
+        height: 18rem;
+    }
+    
+    .team-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+/* Contact Flip Cards */
+.contact-card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.contact-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+}
+
+.contact-card.flipped .contact-inner {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    /* Hacker glass aesthetic: translucent, slightly blurred surface */
+    background: rgba(0,0,0,0.24);
+    backdrop-filter: blur(6px) saturate(105%);
+    -webkit-backdrop-filter: blur(6px) saturate(105%);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+/* Light theme transparency for card faces */
+[data-theme="light"] .contact-card .card-face {
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(6px) saturate(105%);
+    -webkit-backdrop-filter: blur(6px) saturate(105%);
+}
+
+/* Vibrant accent glow overlay */
+.contact-card .card-face::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(120% 120% at 0% 0%, var(--accent-color) 0%, transparent 60%),
+        radial-gradient(120% 120% at 100% 100%, var(--accent-color) 0%, transparent 60%);
+    /* Subtle neon tint to avoid overly vibrant look */
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+.contact-card:hover .card-face {
+    border-color: var(--accent-color);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.card-face.front {
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.card-face.back {
+    transform: rotateY(180deg);
+    justify-content: space-between;
+}
+
+.contact-avatar {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-primary);
+    color: var(--accent-color);
+    font-size: 2rem;
+    border: 2px solid var(--accent-color);
+}
+
+.contact-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.contact-role {
+    color: var(--accent-color);
+    font-weight: 500;
+    text-align: center;
+}
+
+.contact-prompt {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.back-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.contact-links {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.contact-link i {
+    color: var(--accent-color);
+    width: 1.25rem;
+    text-align: center;
+}
+
+.contact-link:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-color);
+}
+
+.team-grid .contact-card {
+    min-height: 320px;
+}
+
+/* Visible phone link on front */
+.contact-number {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    padding: 0.4rem 0.75rem;
+    background: rgba(0,0,0,0.25);
+}
+
+[data-theme="light"] .contact-number {
+    background: rgba(255,255,255,0.4);
+}
+
+.contact-number i {
+    color: var(--accent-color);
+}
+
+.contact-number:hover {
+    border-color: var(--accent-color);
+}
+
+/* Placeholder phone when no number is provided */
+.contact-number-placeholder {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    border: 1px dashed var(--border-color);
+    border-radius: 999px;
+    padding: 0.4rem 0.75rem;
+    background: rgba(0,0,0,0.15);
+}
+
+[data-theme="light"] .contact-number-placeholder {
+    background: rgba(255,255,255,0.3);
+}
+
+.contact-number-placeholder i {
+    color: var(--accent-color);
+}
+
+@media (max-width: 480px) {
+    .about-section {
+        padding: 6rem 1rem 3rem;
+    }
+    
+    .about-image .logo-circle {
+        width: 14rem;
+        height: 14rem;
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}
