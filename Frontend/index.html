@@ -89,11 +89,12 @@
                         <div class="form-group">
                             <input type="email" id="email" placeholder="Email" required>
                         </div>
-                        <div class="form-group">
+                       <div class="form-group">
                             <div class="password-input-wrapper">
-                                <input type="password" id="newPassword" placeholder="Password" required>
+                                <input type="password" id="newPassword" placeholder="Password" required minlength="8"   pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$"    title="Password must be at least 8 characters long and include both letters and numbers." required>
                                 <button type="button" id="toggleSignupPassword" class="password-toggle"><i class="bi bi-eye"></i></button>
                             </div>
+                         <p id="passwordError" class="field-error hidden">Password must be at least 8 characters and contain letters & numbers.</p>
                         </div>
                         <div class="form-group">
                             <div class="password-input-wrapper">
